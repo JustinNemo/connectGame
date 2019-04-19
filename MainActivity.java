@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
+//I think this part is responsible for the force closing of app since it will happen only if I pressed the play again button
     public void playAgain(View view) {
 
         Button restartButton = findViewById(R.id.restartButton);
@@ -87,6 +87,8 @@ public class MainActivity extends AppCompatActivity {
         winnerTextView.setVisibility(View.INVISIBLE);
 
         GridLayout gridLayout = findViewById(R.id.gridLayout);
+        
+//I tried to remove this part and tried to press the button, the code above worked so i think this part is responsible.
 
         for(int i=0; i<gridLayout.getChildCount(); i++) {
 
@@ -107,6 +109,8 @@ public class MainActivity extends AppCompatActivity {
         gameActive = true;
 
     }
+    
+    //end of error code
 
      @Override
     protected void onCreate(Bundle savedInstanceState) {
