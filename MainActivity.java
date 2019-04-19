@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 //I think this part is responsible for the force closing of app since it will happen only if I pressed the play again button
-    public void playAgain(View view) {
+   public void playAgain(View view) {
 
         Button restartButton = findViewById(R.id.restartButton);
 
@@ -86,27 +86,37 @@ public class MainActivity extends AppCompatActivity {
 
         winnerTextView.setVisibility(View.INVISIBLE);
 
-        GridLayout gridLayout = findViewById(R.id.gridLayout);
+       // GridLayout gridLayout = findViewById(R.id.gridLayout);
         
 //I tried to remove this part and tried to press the button, the code above worked so i think this part is responsible.
 
-        for(int i=0; i<gridLayout.getChildCount(); i++) {
+       // for(int i=0; i<gridLayout.getChildCount(); i++) {
 
-            ImageView counter = (ImageView) gridLayout.getChildAt(i);
+      //     ImageView counter = (ImageView) gridLayout.getChildAt(i);
 
-            counter.setImageDrawable(null);
+     //      counter.setImageDrawable(null);
 
-        }
+     //    }
 
-        for (int i=0; i<gameState.length; i++) {
+     //    for (int i=0; i<gameState.length; i++) {
 
-            gameState[i] = 2;
+     //       gameState[i] = 2;
 
-        }
+     //   }
 
-        activePlayer = 0;
+     // activePlayer = 0;
 
-        gameActive = true;
+     //  gameActive = true;
+       
+       // I tried using Intent to restart the activity and it works, but I am not satisfied with the fix I did,
+       // because everytime I pressed the Play again button the app seems to close then reopen again.
+       // not the fix I am looking for but for the meantime this fix works.
+       
+         Intent intent = getIntent();
+            
+                finish();
+            
+                startActivity(intent);
 
     }
     
